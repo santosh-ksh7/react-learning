@@ -1,0 +1,60 @@
+.cont1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.moviecont1{
+    width: 350px;
+    height: min-content;
+}
+
+img{
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.App{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px;
+}
+
+.movieform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px; 
+    margin: auto; 
+}
+
+nav{
+    display: flex;
+    justify-content: space-around; 
+    background-color: wheat; 
+    padding: 10px
+}
+
+.addinfocont{
+    max-width: 1000px;
+    margin: 20px;
+}
+
+.tictactoecont{
+    max-width: 600px;
+    height: 300px;
+    margin: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.conttt{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 30px;
+}
