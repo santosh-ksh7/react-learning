@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { API } from "./global";
 
 const formValidationSchema = yup.object({
   poster: yup.string().min(5).required(),
@@ -22,7 +23,7 @@ export function Editinfo() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://62aaf0f8a62365888bd041ae.mockapi.io/movies/${id}`)
+    fetch(`${API}/movies/${id}`)
       .then((data) => data.json())
       .then((data) => setMv(data))
       .then(() => setStatus(true));
@@ -45,7 +46,7 @@ function Editinfocomponent({ mv }) {
     },
     validationSchema: formValidationSchema,
     onSubmit: (values)=>{
-      fetch(`https://62aaf0f8a62365888bd041ae.mockapi.io/movies/${id}`, {
+      fetch(`${API}/movies/${id}`, {
           method: "PUT",
           body: JSON.stringify(values),
           headers: {
@@ -86,7 +87,7 @@ function Editinfocomponent({ mv }) {
         //   summary: summary,
         //   trailer: trailer
         // };
-        // fetch(`https://62aaf0f8a62365888bd041ae.mockapi.io/movies/${id}`, {
+        // fetch(`${API}/movies/${id}`, {
         //   method: "PUT",
         //   body: JSON.stringify(obj),
         //   headers: {

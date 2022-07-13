@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useFormik } from "formik";
 import * as yup from 'yup';
+import { API } from "./global";
 
 const formValidationSchema = yup.object({
       poster: yup.string().min(5).required(),
@@ -33,7 +34,7 @@ export function Addmovie() {
     },
     validationSchema: formValidationSchema,
     onSubmit:(values)=> {
-        fetch("https://62aaf0f8a62365888bd041ae.mockapi.io/movies" ,{
+        fetch(`${API}/movies` ,{
         method: "POST",
         body: JSON.stringify(values),
         headers: {
@@ -51,7 +52,7 @@ export function Addmovie() {
     //   summary: summary,
     //   trailer: trailer
     // };
-    // fetch("https://62aaf0f8a62365888bd041ae.mockapi.io/movies" ,{
+    // fetch("${API}/movies" ,{
     //   method: "POST",
     //   body: JSON.stringify(newmv),
     //   headers: {

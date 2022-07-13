@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { API } from './global';
 
 
 export function MovieLogic() {
@@ -12,12 +13,12 @@ export function MovieLogic() {
   const[arr,setArr] = useState([]);
 
   const getdata = () => {
-    fetch("https://62aaf0f8a62365888bd041ae.mockapi.io/movies").then((data) => data.json()).then((data)=>setArr(data))
+    fetch(`${API}/movies`).then((data) => data.json()).then((data)=>setArr(data))
   }
 
   const deletedata=(id)=>{
     console.log(id);
-    fetch(`https://62aaf0f8a62365888bd041ae.mockapi.io/movies/${id}`, {
+    fetch(`${API}/movies/${id}`, {
       method: "DELETE"
     }).then(()=> getdata())
   }

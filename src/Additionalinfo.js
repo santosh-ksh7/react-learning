@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect } from "react";
 import { useState } from "react";
+import { API } from "./global";
 
 export function Additionalinfo() {
 
@@ -14,7 +15,7 @@ export function Additionalinfo() {
   const[movie, setMovie] = useState({})
 
   useEffect(()=>{
-    fetch(`https://62aaf0f8a62365888bd041ae.mockapi.io/movies/${id}`).then((data)=>data.json()).then((data)=>setMovie(data))
+    fetch(`${API}/movies/${id}`).then((data)=>data.json()).then((data)=>setMovie(data))
   }, [])
 
   const navigate = useNavigate();
