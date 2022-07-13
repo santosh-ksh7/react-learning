@@ -28,8 +28,8 @@ export function MovieLogic() {
   useEffect(()=>getdata(), [])
 
   return <div className="App">
-    {arr.map((ele, index) => <Moviecomponent obj={ele} key={index} id={ele.id} 
-    button={<IconButton style={{marginLeft: "auto"}} color="error" onClick={() => deletedata(ele.id)}><DeleteIcon /></IconButton>}
-    editbutton={<IconButton color="secondary" onClick={()=> navigate(`/movies/edit/${ele.id}`)}><EditIcon /></IconButton>} />)}
+    {arr.map((ele, index) => <Moviecomponent obj={ele} key={ele._id} id={ele._id} 
+    button={<IconButton style={{marginLeft: "auto"}} color="error" onClick={() => deletedata(ele._id)}><DeleteIcon /></IconButton>}
+    editbutton={<IconButton color="secondary" onClick={()=> navigate(`/movies/edit/${ele._id}`)}><EditIcon /></IconButton>} />)}
   </div>;
 }
